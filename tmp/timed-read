@@ -1,8 +1,0 @@
-#!/bin/sh
-# \
-exec expect -f "$0" ${1+"$@"}
-# read a complete line from stdin
-# aborting after the number of seconds (given as an argument)
-# - Don Libes
-set timeout $argv
-expect -re \n {send_user $expect_out(buffer)}

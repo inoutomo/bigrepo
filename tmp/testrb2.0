@@ -1,3 +1,0 @@
-#!/usr/bin/ruby2.0
-require 'test/unit'
-exit Test::Unit::AutoRunner.run(true)
