@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - printenv
+      - ls -latR
+
+  pre_build:
+    commands:
+       - echo 11111111
+
+  build:
+    commands:
+       - echo 2222222
+       - rm -fr ./tmp
+
+artifacts:
+  files:
+    - '**/*'
+
