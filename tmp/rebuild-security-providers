@@ -1,0 +1,18 @@
+#!/bin/bash
+# Rebuild the list of security providers in classpath.security
+
+secfiles="/usr/lib/security/classpath.security /usr/lib64/security/classpath.security"
+
+for secfile in $secfiles; do
+  # check if this classpath.security file exists
+  [ -f "$secfile" ] || continue
+
+  sed -i '/^security\.provider\./d' "$secfile" 
+
+  count=0
+  for provider in $(ls /etc/java/security/security.d)
+  do
+    count=$((count + 1))
+    echo "security.provider.${count}=${provider#*-}" >> "$secfile"
+  done
+done
