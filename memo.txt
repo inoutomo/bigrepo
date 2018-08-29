@@ -1,0 +1,4 @@
+
+
+git add .; git commit -m "test"; git push; aws codebuild start-build --project-name GitHubbigrepo --git-clone-depth-override 1
+

@@ -8,6 +8,8 @@ phases:
 
   pre_build:
     commands:
+       - echo 00000000
+       - git branch -a --contains HEAD
        - echo 11111111
 
   build:
